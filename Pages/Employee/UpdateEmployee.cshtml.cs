@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Data.SqlClient;
+using System.Globalization;
 
 namespace WebApplication1.Pages.Employee
 {
@@ -58,7 +59,7 @@ namespace WebApplication1.Pages.Employee
             {
                 errMsg = "";
                 successMsg = "";
-
+                //CultureInfo cultures = new CultureInfo("en-US");
                 //Console.WriteLine("ALL FINE TILL HERE!");
                 employeeObj.id = Convert.ToInt32(Request.Form["id"]);
                 //Console.WriteLine(employeeObj.id);
@@ -69,6 +70,7 @@ namespace WebApplication1.Pages.Employee
                 employeeObj.basedLocation = Request.Form["loc"];
                 //Console.WriteLine(employeeObj.basedLocation);
                 employeeObj.dateOfBirth = Convert.ToDateTime(Request.Form["dob"]);
+                
                 //Console.WriteLine(employeeObj.dateOfBirth);
                 employeeObj.name = Request.Form["name"];
                 Console.WriteLine(employeeObj.name.Length);
@@ -92,7 +94,7 @@ namespace WebApplication1.Pages.Employee
 
                 SqlCommand cmd = new SqlCommand(query, sqlconn);
 
-                var r = cmd.ExecuteReader();
+                var r = cmd.ExecuteNonQuery();
                 successMsg = "Book Added Successfully";
                 Console.WriteLine("ADDED!");
             }

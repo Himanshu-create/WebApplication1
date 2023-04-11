@@ -7,6 +7,30 @@
 
 <br />
 
+@if (Model.errMsg.Length > 0)
+{
+    <div id="error-div">
+        <br><div class="alert-warning"> @Model.errMsg </div>  <br />
+        <button type="button" class="btn-close" data-dismiss="alert"
+                onclick="
+    const element = document.getElementById('error-div');
+                element.remove();
+"></button>
+    </div>
+}
+
+@if (Model.successMsg.Length > 0)
+{
+    <div id="success-div">
+        <br><div class="alert-success"> @Model.successMsg </div>  <br />
+        <button type="button" class="btn-close"
+                onclick="
+    const element = document.getElementById('success-div');
+                element.remove();
+"></button>
+    </div>
+}
+
 <form method="post">
     
     <div class="row mb-3">
