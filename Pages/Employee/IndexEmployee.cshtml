@@ -1,0 +1,41 @@
+﻿@page
+@model WebApplication1.Pages.Employee.IndexModel
+@{
+    ViewData["Title"] = "Employee List";
+}
+
+<br>
+
+<div>
+    <a class="btn-primary btn-sm" href="/Employee/CreateEmployee">Create New Employee</a>
+</div>
+
+<br>
+
+<h1>Employee List</h1>
+<table class='table'>
+    <thead>
+        <tr>
+            <th>EmployeeID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>technology</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    
+    <tbody>
+        @{
+            foreach(var e in Model.employeeList)
+            {
+                <tr>
+                    <td>@e.Id</td>
+                    <td>@e.Name</td>
+                    <td>@e.dept</td>
+                    <td>@e.technology</td>
+                    <td>@e.salary</td>
+                </tr>
+            }
+        }
+    </tbody>
+</table>

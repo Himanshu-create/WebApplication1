@@ -1,0 +1,92 @@
+﻿@page
+@model WebApplication1.Pages.Employee.CreateEmployeeModel
+@{
+}
+<h1>Create Employee Page</h1>
+<br>
+
+@if (Model.errMsg.Length > 0)
+{
+    <div id="error-div">
+        <br><div class="alert-warning"> @Model.errMsg </div>  <br />
+        <button type="button" class="btn-close" data-dismiss="alert"
+                onclick="
+    const element = document.getElementById('error-div');
+                element.remove();
+"></button>
+    </div>
+}
+
+@if ( Model.successMsg.Length > 0 )
+{
+    <div id="success-div">
+        <br><div class="alert-success"> @Model.successMsg </div>  <br />
+        <button type="button" class="btn-close" 
+                onclick="
+    const element = document.getElementById('success-div');
+                element.remove();
+"></button>
+    </div>
+}
+
+<form method="post">
+    <div class="row mb-3">
+        <label  class="col-sm-2 col-form-label">Employee ID</label>
+        <div class="col-sm-4">
+            <input type="number" class="form-control" name="id" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Employee Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="name" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Technology</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="technology" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-4">
+            <input type="date" class="form-control" name="dob" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Department</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="department" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Salary</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="salary" value="" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Based Location</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="loc" value="" required />
+        </div>
+    </div>
+    <br />
+
+    <div>
+        <button type="submit" class="btn-primary"> Submit </button>
+    </div>
+
+    <div>
+        <a class="btn-primary btn" href="/">cancel</a>
+    </div>
+
+    
+</form>
