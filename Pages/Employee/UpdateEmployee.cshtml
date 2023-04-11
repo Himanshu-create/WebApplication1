@@ -1,0 +1,73 @@
+﻿@page
+@model WebApplication1.Pages.Employee.UpdateEmployeeModel
+@{
+}
+
+<h1>Update Employee</h1>
+
+<br />
+
+<form method="post">
+    
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Employee ID</label>
+        <div class="col-sm-4">
+            <input type="hidden" class="form-control" name="id" value="@Model.employeeObj.id" required />
+            <p>@Model.employeeObj.id</p>
+
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Employee Name</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="name" value="@Model.employeeObj.name" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Technology In</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="technology" value="@Model.employeeObj.technology" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Date of Birth</label>
+        <div class="col-sm-4">
+            <input type="date" class="form-control" name="dob" value="@Model.employeeObj.dateOfBirth.ToString("yyyy-MM-dd")" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Department</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="department" value="@Model.employeeObj.department" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Salary</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="salary" value="@Model.employeeObj.salary" required />
+        </div>
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-2 col-form-label">Based Location</label>
+        <div class="col-sm-4">
+            <input type="text" class="form-control" name="loc" value="@Model.employeeObj.basedLocation" required />
+        </div>
+    </div>
+    <br />
+
+    <div>
+        <button type="submit" class="btn-primary"> Submit </button>
+    </div>
+
+    <div>
+        <a class="btn-primary btn" href="/">cancel</a>
+    </div>
+
+
+</form>
