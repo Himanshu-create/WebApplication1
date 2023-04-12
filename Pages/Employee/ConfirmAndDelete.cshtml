@@ -1,0 +1,50 @@
+﻿@page
+@model WebApplication1.Pages.Employee.ConfirmAndDeleteModel
+@{
+}
+
+<br />
+<h1> Confirm And Delete Employee</h1>
+<br />
+<br />
+<p>Are you sure you want to delete Employee id : @Model.employeeObj.id </p>
+
+<br />
+
+<table class='table'>
+    <thead>
+        <tr>
+            <th>EmployeeID</th>
+            <th>Name</th>
+            <th>Department</th>
+            <th>technology</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+
+    <tbody>
+         <tr>
+                    <td>@Model.employeeObj.id</td>
+            <td>@Model.employeeObj.name</td>
+            <td>@Model.employeeObj.department</td>
+            <td>@Model.employeeObj.technology</td>
+            <td>@Model.employeeObj.salary</td>
+
+         </tr>
+    </tbody>
+     
+</table>
+
+<form method="post">
+
+    <div>
+        <button type="submit" class="btn-primary"> DELETE </button>
+    </div>
+    </form>
+    <br />
+
+<div>
+    <a class="btn-primary btn" href="javascript:javascript:history.go(-1)"> BACK </a>
+ 
+</div>
+
